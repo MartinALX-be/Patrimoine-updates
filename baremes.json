@@ -1,0 +1,27 @@
+{
+ "updated": "2026-09-30",
+ "rc_index": {
+  "2020": 1.8492,
+  "2021": 1.863,
+  "2022": 1.9084,
+  "2023": 2.0915,
+  "2024": 2.1763,
+  "2025": 2.2446,
+  "2026": 2.3
+ },
+ "fiscal": {
+  "2024": {
+   "source": "SPF Finances — revenus 2024 (exercice 2025)",
+   "tax_savings_exemption": 1020.0,
+   "tax_dividend_exemption": 833.0
+  },
+  "2025": {
+   "source": "SPF Finances — revenus 2025 (exercice 2026), vérifié 08/2026",
+   "tax_savings_exemption": 1050.0,
+   "tax_dividend_exemption": 833.0,
+   "tax_pension_ceiling_low": 1020.0,
+   "tax_pension_ceiling_high": 1310.0,
+   "tax_rc_index": 2.2446
+  }
+ }
+}
