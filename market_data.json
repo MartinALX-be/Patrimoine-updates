@@ -1,0 +1,121 @@
+{
+ "schema": 1,
+ "generated_at": "2026-10-02T20:44:29+00:00",
+ "errors": {},
+ "buffett": {
+  "ratio": 255.0,
+  "as_of": "2026-06-30",
+  "quarter": "2026-T2",
+  "equities_bn": 83051.0,
+  "gdp_bn": 32563.0,
+  "spx_ref": 7499.36,
+  "gdp_growth_annual": 6.31,
+  "source": "Réserve fédérale (FRED : NCBEILQ027S ÷ GDP), extrapolé avec le S&P 500"
+ },
+ "sentiment": {
+  "value": 33,
+  "label": "Peur",
+  "as_of": "2026-10-01",
+  "components": [
+   {
+    "key": "momentum",
+    "label": "Élan du S&P 500 (vs moyenne 125 j)",
+    "raw": 0.02724,
+    "score": 20
+   },
+   {
+    "key": "strength",
+    "label": "Proximité du plus haut annuel",
+    "raw": -0.01699,
+    "score": 33
+   },
+   {
+    "key": "volatility",
+    "label": "Volatilité VIX (vs moyenne 50 j)",
+    "raw": -0.02969,
+    "score": 38
+   },
+   {
+    "key": "credit",
+    "label": "Écart de crédit haut rendement",
+    "raw": -3.24,
+    "score": 3
+   },
+   {
+    "key": "safe_haven",
+    "label": "Actions vs obligations (20 j)",
+    "raw": 0.03373,
+    "score": 73
+   }
+  ],
+  "source": "Baromètre Patrimoine — calculé par l'éditeur (FRED : S&P 500, VIX, écart de crédit, taux 10 ans)"
+ },
+ "crypto_sentiment": {
+  "value": 72,
+  "label": "Avidité",
+  "as_of": "2026-10-02",
+  "source": "alternative.me — Crypto Fear & Greed Index"
+ },
+ "inflation_be": {
+  "value": 2.2,
+  "period": "2025-12",
+  "prev": 2.6,
+  "history": [
+   {
+    "period": "2024-12",
+    "value": 4.4
+   },
+   {
+    "period": "2025-01",
+    "value": 4.4
+   },
+   {
+    "period": "2025-02",
+    "value": 4.4
+   },
+   {
+    "period": "2025-03",
+    "value": 3.6
+   },
+   {
+    "period": "2025-04",
+    "value": 3.1
+   },
+   {
+    "period": "2025-05",
+    "value": 2.8
+   },
+   {
+    "period": "2025-06",
+    "value": 2.9
+   },
+   {
+    "period": "2025-07",
+    "value": 2.6
+   },
+   {
+    "period": "2025-08",
+    "value": 2.6
+   },
+   {
+    "period": "2025-09",
+    "value": 2.7
+   },
+   {
+    "period": "2025-10",
+    "value": 2.5
+   },
+   {
+    "period": "2025-11",
+    "value": 2.6
+   },
+   {
+    "period": "2025-12",
+    "value": 2.2
+   }
+  ],
+  "source": "Eurostat — IPCH (HICP) Belgique, variation sur un an (CC BY 4.0)"
+ },
+ "generator": "console",
+ "published_at": "2026-10-02T20:45:00+00:00"
+}
