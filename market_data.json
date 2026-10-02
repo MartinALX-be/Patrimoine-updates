@@ -1,7 +1,10 @@
 {
  "schema": 1,
- "generated_at": "2026-10-02T20:44:29+00:00",
- "errors": {},
+ "generated_at": "2026-10-02T20:45:42+00:00",
+ "errors": {
+  "buffett": "ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=40)",
+  "sentiment": "ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=40)"
+ },
  "buffett": {
   "ratio": 255.0,
   "as_of": "2026-06-30",
@@ -10,7 +13,8 @@
   "gdp_bn": 32563.0,
   "spx_ref": 7499.36,
   "gdp_growth_annual": 6.31,
-  "source": "Réserve fédérale (FRED : NCBEILQ027S ÷ GDP), extrapolé avec le S&P 500"
+  "source": "Réserve fédérale (FRED : NCBEILQ027S ÷ GDP), extrapolé avec le S&P 500",
+  "stale": true
  },
  "sentiment": {
   "value": 33,
@@ -48,7 +52,8 @@
     "score": 73
    }
   ],
-  "source": "Baromètre Patrimoine — calculé par l'éditeur (FRED : S&P 500, VIX, écart de crédit, taux 10 ans)"
+  "source": "Baromètre Patrimoine — calculé par l'éditeur (FRED : S&P 500, VIX, écart de crédit, taux 10 ans)",
+  "stale": true
  },
  "crypto_sentiment": {
   "value": 72,
@@ -115,7 +120,5 @@
    }
   ],
   "source": "Eurostat — IPCH (HICP) Belgique, variation sur un an (CC BY 4.0)"
- },
- "generator": "console",
- "published_at": "2026-10-02T20:45:00+00:00"
+ }
 }
