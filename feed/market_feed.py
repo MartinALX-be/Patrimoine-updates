@@ -20,6 +20,7 @@ import argparse
 import json
 import math
 import sys
+import time
 from datetime import date, datetime, timedelta, timezone
 
 import requests
@@ -35,8 +36,18 @@ def fred(series, start=None):
     params = {"id": series}
     if start:
         params["cosd"] = start
-    r = requests.get(FRED, params=params, headers=UA, timeout=40)
-    r.raise_for_status()
+    # FRED répond parfois lentement depuis les serveurs de GitHub : 3 essais espacés, délai long.
+    last = None
+    for attempt in range(3):
+        try:
+            r = requests.get(FRED, params=params, headers=UA, timeout=(15, 120))
+            r.raise_for_status()
+            break
+        except requests.RequestException as e:
+            last = e
+            time.sleep(10 * (attempt + 1))
+    else:
+        raise last
     out = []
     for line in r.text.splitlines()[1:]:
         d, _, v = line.partition(",")
