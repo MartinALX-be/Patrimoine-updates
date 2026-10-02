@@ -1,0 +1,28 @@
+# Mise à jour automatique de market_data.json (indicateurs de marché lus par Patrimoine).
+# Fichier GÉRÉ PAR LA CONSOLE PATRIMOINE : ne pas modifier à la main.
+name: Données de marché
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # heure UTC — réglé depuis la Console Patrimoine
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: market-data
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      # --strict : en cas d'écart suspect, rien n'est publié et la tâche échoue (e-mail GitHub).
+      - run: python feed/market_feed.py --out market_data.json --strict
+      - name: Publier si changement
+        run: |
+          git config user.name "patrimoine-bot"
+          git config user.email "patrimoine-bot@users.noreply.github.com"
+          git add market_data.json
+          git diff --cached --quiet || (git commit -m "Données de marché (automatique)" && git push)
