@@ -11,7 +11,7 @@ concurrency: market-data
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -19,10 +19,23 @@ jobs:
           python-version: "3.11"
       - run: pip install requests
       # --strict : en cas d'écart suspect, rien n'est publié et la tâche échoue (e-mail GitHub).
+      # FRED_API_KEY (secret du dépôt, clé gratuite FRED) : API officielle, seule voie qui
+      # répond depuis les serveurs de GitHub. Sans secret : Buffett et baromètre gardent
+      # leur dernière valeur (à rafraîchir depuis la console, sur ton PC).
       - run: python feed/market_feed.py --out market_data.json --strict
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
       - name: Publier si changement
         run: |
           git config user.name "patrimoine-bot"
           git config user.email "patrimoine-bot@users.noreply.github.com"
-          git add market_data.json
-          git diff --cached --quiet || (git commit -m "Données de marché (automatique)" && git push)
+          cp market_data.json "$RUNNER_TEMP/market_data.json"
+          for i in 1 2 3; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            cp "$RUNNER_TEMP/market_data.json" market_data.json
+            git add market_data.json
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Données de marché (automatique)" && git push -q origin HEAD:main && exit 0
+            sleep 10
+          done
+          exit 1

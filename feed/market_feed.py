@@ -19,6 +19,7 @@ Utilisé tel quel par la console (Patrimoine-console) et par la tâche GitHub Ac
 import argparse
 import json
 import math
+import os
 import sys
 import time
 from datetime import date, datetime, timedelta, timezone
@@ -28,33 +29,54 @@ import requests
 SCHEMA = 1
 UA = {"User-Agent": "Patrimoine-market-feed/1.0"}
 FRED = "https://fred.stlouisfed.org/graph/fredgraph.csv"
+FRED_API = "https://api.stlouisfed.org/fred/series/observations"
 
 
 # ------------------------------------------------------------------ téléchargements
 def fred(series, start=None):
-    """[(date ISO, valeur)] d'une série FRED (valeurs manquantes « . » ignorées)."""
-    params = {"id": series}
-    if start:
-        params["cosd"] = start
-    # FRED répond parfois lentement depuis les serveurs de GitHub : 3 essais espacés, délai long.
+    """[(date ISO, valeur)] d'une série FRED (valeurs manquantes « . » ignorées).
+
+    Avec la variable d'environnement FRED_API_KEY (clé gratuite, secret GitHub) : API
+    officielle api.stlouisfed.org — c'est la voie prévue pour les programmes et serveurs
+    (le téléchargement CSV public ne répond pas depuis les serveurs de GitHub).
+    Sans clé : téléchargement CSV public (fonctionne depuis un PC personnel)."""
+    key = os.environ.get("FRED_API_KEY", "").strip()
+    if not key and os.environ.get("GITHUB_ACTIONS"):
+        # Le CSV public de FRED ne répond pas aux serveurs de GitHub : inutile d'attendre.
+        raise RuntimeError("FRED inaccessible depuis GitHub sans le secret FRED_API_KEY")
+    if key:
+        url, params = FRED_API, {"series_id": series, "api_key": key, "file_type": "json"}
+        if start:
+            params["observation_start"] = start
+    else:
+        url, params = FRED, {"id": series}
+        if start:
+            params["cosd"] = start
     last = None
     for attempt in range(3):
         try:
-            r = requests.get(FRED, params=params, headers=UA, timeout=(15, 120))
+            r = requests.get(url, params=params, headers=UA, timeout=(15, 60))
             r.raise_for_status()
             break
         except requests.RequestException as e:
             last = e
-            time.sleep(10 * (attempt + 1))
+            time.sleep(5 * (attempt + 1))
     else:
         raise last
     out = []
-    for line in r.text.splitlines()[1:]:
-        d, _, v = line.partition(",")
-        try:
-            out.append((d, float(v)))
-        except ValueError:
-            continue
+    if key:
+        for o in r.json().get("observations") or []:
+            try:
+                out.append((o["date"], float(o["value"])))
+            except (KeyError, ValueError):
+                continue
+    else:
+        for line in r.text.splitlines()[1:]:
+            d, _, v = line.partition(",")
+            try:
+                out.append((d, float(v)))
+            except ValueError:
+                continue
     if not out:
         raise ValueError(f"Série FRED vide : {series}")
     return out
@@ -195,7 +217,8 @@ BLOCKS = {"buffett": buffett, "sentiment": barometer, "crypto_sentiment": crypto
 
 def build(previous=None, only=None):
     """Recalcule les blocs (tous ou `only`). Un bloc en échec garde sa valeur précédente
-    (marquée `stale`) : une source momentanément indisponible ne vide jamais le fichier."""
+    (sans marque : c'est l'app qui juge l'ancienneté d'après `as_of` / `period` et le
+    rythme normal de chaque donnée) : une source indisponible ne vide jamais le fichier."""
     prev = previous or {}
     out = {"schema": SCHEMA, "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
            "errors": {}}
@@ -209,7 +232,7 @@ def build(previous=None, only=None):
         except Exception as e:                     # noqa: BLE001 — on garde l'ancienne valeur
             out["errors"][key] = f"{type(e).__name__}: {e}"[:300]
             if key in prev:
-                out[key] = {**prev[key], "stale": True}
+                out[key] = {k: v for k, v in prev[key].items() if k != "stale"}
     return out
 
 
