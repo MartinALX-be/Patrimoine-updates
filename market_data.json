@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-10-03T07:25:39+00:00",
+ "generated_at": "2026-10-03T07:38:19+00:00",
  "errors": {},
  "buffett": {
   "ratio": 255.0,
@@ -117,5 +117,5 @@
   "source": "Eurostat — IPCH (HICP) Belgique, variation sur un an (CC BY 4.0)"
  },
  "generator": "console",
- "published_at": "2026-10-03T07:26:37+00:00"
+ "published_at": "2026-10-03T07:38:26+00:00"
 }
