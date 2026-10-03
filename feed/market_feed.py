@@ -121,12 +121,29 @@ def buffett():
 
 
 # ------------------------------------------------------------------ inflation belge
+EUROSTAT = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
+# Depuis 2026, Eurostat publie l'IPCH en ECOICOP v2 (prc_hicp_minr, unité RCH_A) ; l'ancien
+# jeu prc_hicp_manr s'est arrêté à 2025-12 et ne sert plus que de secours.
+INFLATION_QUERIES = [
+    ("prc_hicp_minr", {"unit": "RCH_A", "coicop18": "TOTAL"}),
+    ("prc_hicp_manr", {"coicop": "CP00"}),
+]
+
+
 def inflation_be():
-    url = ("https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
-           "prc_hicp_manr?format=JSON&lang=EN&geo=BE&coicop=CP00")
-    r = requests.get(url, headers=UA, timeout=40)
-    r.raise_for_status()
-    d = r.json()
+    d, last = None, None
+    for ds, extra in INFLATION_QUERIES:
+        try:
+            r = requests.get(EUROSTAT + ds, params={"format": "JSON", "lang": "EN", "geo": "BE",
+                                                    "lastTimePeriod": 13, **extra}, headers=UA, timeout=60)
+            r.raise_for_status()
+            d = r.json()
+            if d.get("value"):
+                break
+        except (requests.RequestException, ValueError) as e:
+            last = e
+    if d is None:
+        raise last
     cat = d["dimension"]["time"]["category"]["index"]
     idx = {int(i): p for p, i in cat.items()}
     pts = sorted(((int(k), float(v)) for k, v in (d.get("value") or {}).items()), key=lambda x: x[0])
