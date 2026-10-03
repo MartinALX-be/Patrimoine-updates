@@ -14,6 +14,22 @@ fiscalité belge. Tes données restent sur ton ordinateur.
 - Windows peut afficher un avertissement SmartScreen (application non encore reconnue) :
   « Informations complémentaires » → « Exécuter quand même ».
 
+## Gratuit ou Patrimoine Pro ?
+
+Chaque installation démarre avec **14 jours d'essai de Patrimoine Pro**. Ensuite :
+
+| | Gratuit | ⭐ Pro (abonnement annuel) |
+|---|---|---|
+| Actifs suivis | 8 par portefeuille | Illimités |
+| Portefeuille, ventes, liquidités, marchés, calendrier, budget, watchlist, alertes, DCA | ✓ | ✓ |
+| Fiscalité belge : précompte, plus-values 2026, TOB, codes de déclaration, exports et PDF fiscal | — | ✓ |
+| Analyse & diagnostic, risque, corrélations, analyse de frais, comparateur ETF | — | ✓ |
+| Crédits détaillés, projections & simulations, rapport PDF | — | ✓ |
+| Barèmes fiscaux officiels mis à jour automatiquement | — | ✓ |
+
+Pas encore prêt à saisir tes données ? Le bouton **« Voir une démo complète »** ouvre un
+portefeuille d'exemple, dans une base séparée.
+
 ## Contenu de ce dépôt
 
 Ce dépôt sert uniquement au canal de mise à jour lu par l'application installée :
