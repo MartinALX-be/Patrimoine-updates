@@ -20,6 +20,7 @@ Chaque installation démarre avec **14 jours d'essai de Patrimoine Pro**. Ensuit
 
 | | Gratuit | ⭐ Pro (abonnement annuel) |
 |---|---|---|
+| Prix (TVA comprise) | 0 € | **39 € / an** — offre de lancement : 29 € la 1ʳᵉ année |
 | Actifs suivis | 8 par portefeuille | Illimités |
 | Portefeuille, ventes, liquidités, marchés, calendrier, budget, watchlist, alertes, DCA | ✓ | ✓ |
 | Fiscalité belge : précompte, plus-values 2026, TOB, codes de déclaration, exports et PDF fiscal | — | ✓ |
