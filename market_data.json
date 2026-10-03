@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-10-02T21:02:57+00:00",
+ "generated_at": "2026-10-03T07:09:43+00:00",
  "errors": {},
  "buffett": {
   "ratio": 255.0,
@@ -51,9 +51,9 @@
   "source": "Baromètre Patrimoine — calculé par l'éditeur (FRED : S&P 500, VIX, écart de crédit, taux 10 ans)"
  },
  "crypto_sentiment": {
-  "value": 72,
+  "value": 67,
   "label": "Avidité",
-  "as_of": "2026-10-02",
+  "as_of": "2026-10-03",
   "source": "alternative.me — Crypto Fear & Greed Index"
  },
  "inflation_be": {
@@ -115,7 +115,5 @@
    }
   ],
   "source": "Eurostat — IPCH (HICP) Belgique, variation sur un an (CC BY 4.0)"
- },
- "generator": "console",
- "published_at": "2026-10-02T21:03:06+00:00"
+ }
 }
