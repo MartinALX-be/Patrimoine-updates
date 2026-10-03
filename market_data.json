@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-10-03T07:09:43+00:00",
+ "generated_at": "2026-10-03T07:25:39+00:00",
  "errors": {},
  "buffett": {
   "ratio": 255.0,
@@ -57,46 +57,10 @@
   "source": "alternative.me — Crypto Fear & Greed Index"
  },
  "inflation_be": {
-  "value": 2.2,
-  "period": "2025-12",
-  "prev": 2.6,
+  "value": 4.6,
+  "period": "2026-09",
+  "prev": 4.2,
   "history": [
-   {
-    "period": "2024-12",
-    "value": 4.4
-   },
-   {
-    "period": "2025-01",
-    "value": 4.4
-   },
-   {
-    "period": "2025-02",
-    "value": 4.4
-   },
-   {
-    "period": "2025-03",
-    "value": 3.6
-   },
-   {
-    "period": "2025-04",
-    "value": 3.1
-   },
-   {
-    "period": "2025-05",
-    "value": 2.8
-   },
-   {
-    "period": "2025-06",
-    "value": 2.9
-   },
-   {
-    "period": "2025-07",
-    "value": 2.6
-   },
-   {
-    "period": "2025-08",
-    "value": 2.6
-   },
    {
     "period": "2025-09",
     "value": 2.7
@@ -112,8 +76,46 @@
    {
     "period": "2025-12",
     "value": 2.2
+   },
+   {
+    "period": "2026-01",
+    "value": 1.4
+   },
+   {
+    "period": "2026-02",
+    "value": 1.4
+   },
+   {
+    "period": "2026-03",
+    "value": 2.2
+   },
+   {
+    "period": "2026-04",
+    "value": 4.2
+   },
+   {
+    "period": "2026-05",
+    "value": 4.0
+   },
+   {
+    "period": "2026-06",
+    "value": 3.3
+   },
+   {
+    "period": "2026-07",
+    "value": 3.6
+   },
+   {
+    "period": "2026-08",
+    "value": 4.2
+   },
+   {
+    "period": "2026-09",
+    "value": 4.6
    }
   ],
   "source": "Eurostat — IPCH (HICP) Belgique, variation sur un an (CC BY 4.0)"
- }
+ },
+ "generator": "console",
+ "published_at": "2026-10-03T07:26:37+00:00"
 }
