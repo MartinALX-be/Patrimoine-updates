@@ -1,8 +1,8 @@
 {
- "version": "1.11.1",
+ "version": "1.11.2",
  "date": "2026-10-10",
  "file": "Patrimoine-Setup.exe",
- "sha256": "c7e382c5874ef16af534e6c4f60b2c753d70c4424b4288f71260f5c4c777e5ee",
- "size": 41660963,
+ "sha256": "730f2b0419bde4472b790c21caacafb056f700745291550f6ba895f78216e4d7",
+ "size": 41668277,
  "kind": "exe"
 }
