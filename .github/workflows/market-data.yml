@@ -3,7 +3,7 @@
 name: Données de marché
 on:
   schedule:
-    - cron: "0 6 * * 1"   # heure UTC — réglé depuis la Console Patrimoine
+    - cron: "0 6 * * *"   # heure UTC — réglé depuis la Console Patrimoine
   workflow_dispatch:
 permissions:
   contents: write
