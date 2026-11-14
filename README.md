@@ -1,7 +1,16 @@
 # Patrimoine — téléchargement et mises à jour
 
 Suivi et gestion de patrimoine pour Windows : actions, ETF, épargne, immobilier, crédits,
-fiscalité belge. Tes données restent sur ton ordinateur.
+fiscalité belge.
+
+> **🔒 100 % local.** Tes données ne quittent jamais ton ordinateur : pas de compte, pas de
+> serveur qui lit tes avoirs. L'application travaille hors ligne et ne consulte que les barèmes
+> publics et les cours. Tes sauvegardes restent dans tes fichiers, à toi.
+
+> **🇧🇪 Prêt pour la taxe sur les plus-values 2026.** Valeur de référence au 31/12/2025,
+> exonération de 10 000 € par personne (reportable jusqu'à 15 000 € sur cinq ans), part Reynders
+> exclue de la base : l'application calcule la taxe de 10 % à ta place et tient tes codes de
+> déclaration à jour.
 
 ## Installer ou mettre à jour
 
