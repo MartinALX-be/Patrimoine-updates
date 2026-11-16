@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-15T13:42:09+00:00",
+ "generated_at": "2026-11-16T15:15:00+00:00",
  "errors": {},
  "buffett": {
   "ratio": 255.0,
@@ -53,7 +53,7 @@
  "crypto_sentiment": {
   "value": 10,
   "label": "Peur extrême",
-  "as_of": "2026-11-15",
+  "as_of": "2026-11-16",
   "source": "alternative.me — Crypto Fear & Greed Index"
  },
  "inflation_be": {
