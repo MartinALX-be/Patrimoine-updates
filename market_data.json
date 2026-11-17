@@ -1,7 +1,9 @@
 {
  "schema": 1,
- "generated_at": "2026-11-16T15:15:00+00:00",
- "errors": {},
+ "generated_at": "2026-11-17T15:42:58+00:00",
+ "errors": {
+  "sentiment": "ValueError: Historique FRED insuffisant pour le baromètre"
+ },
  "buffett": {
   "ratio": 255.0,
   "as_of": "2026-06-30",
@@ -51,9 +53,9 @@
   "source": "Baromètre Patrimoine — calculé par l'éditeur (FRED : S&P 500, VIX, écart de crédit, taux 10 ans)"
  },
  "crypto_sentiment": {
-  "value": 10,
+  "value": 12,
   "label": "Peur extrême",
-  "as_of": "2026-11-16",
+  "as_of": "2026-11-17",
   "source": "alternative.me — Crypto Fear & Greed Index"
  },
  "inflation_be": {
