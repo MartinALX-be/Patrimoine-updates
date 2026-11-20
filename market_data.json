@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-19T15:28:39+00:00",
+ "generated_at": "2026-11-20T15:06:13+00:00",
  "errors": {},
  "buffett": {
   "ratio": 255.0,
@@ -15,45 +15,45 @@
  "sentiment": {
   "value": 3,
   "label": "Peur extrême",
-  "as_of": "2026-11-17",
+  "as_of": "2026-11-18",
   "components": [
    {
     "key": "momentum",
     "label": "Élan du S&P 500 (vs moyenne 125 j)",
-    "raw": -0.03273,
+    "raw": -0.03493,
     "score": 3
    },
    {
     "key": "strength",
     "label": "Proximité du plus haut annuel",
-    "raw": -0.06118,
+    "raw": -0.06335,
     "score": 2
    },
    {
     "key": "volatility",
     "label": "Volatilité VIX (vs moyenne 50 j)",
-    "raw": -0.44567,
-    "score": 3
+    "raw": -0.37886,
+    "score": 5
    },
    {
     "key": "credit",
     "label": "Écart de crédit haut rendement",
-    "raw": -3.43,
-    "score": 2
+    "raw": -3.47,
+    "score": 1
    },
    {
     "key": "safe_haven",
     "label": "Actions vs obligations (20 j)",
-    "raw": -0.04929,
-    "score": 3
+    "raw": -0.05418,
+    "score": 2
    }
   ],
   "source": "Baromètre Patrimoine — calculé par l'éditeur (FRED : S&P 500, VIX, écart de crédit, taux 10 ans)"
  },
  "crypto_sentiment": {
-  "value": 10,
+  "value": 12,
   "label": "Peur extrême",
-  "as_of": "2026-11-19",
+  "as_of": "2026-11-20",
   "source": "alternative.me — Crypto Fear & Greed Index"
  },
  "inflation_be": {
