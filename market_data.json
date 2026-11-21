@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-20T15:06:13+00:00",
+ "generated_at": "2026-11-21T14:25:35+00:00",
  "errors": {},
  "buffett": {
   "ratio": 255.0,
@@ -13,39 +13,39 @@
   "source": "Réserve fédérale (FRED : NCBEILQ027S ÷ GDP), extrapolé avec le S&P 500"
  },
  "sentiment": {
-  "value": 3,
+  "value": 1,
   "label": "Peur extrême",
-  "as_of": "2026-11-18",
+  "as_of": "2026-11-19",
   "components": [
    {
     "key": "momentum",
     "label": "Élan du S&P 500 (vs moyenne 125 j)",
-    "raw": -0.03493,
-    "score": 3
+    "raw": -0.05415,
+    "score": 1
    },
    {
     "key": "strength",
     "label": "Proximité du plus haut annuel",
-    "raw": -0.06335,
-    "score": 2
+    "raw": -0.08225,
+    "score": 1
    },
    {
     "key": "volatility",
     "label": "Volatilité VIX (vs moyenne 50 j)",
-    "raw": -0.37886,
-    "score": 5
+    "raw": -0.57421,
+    "score": 1
    },
    {
     "key": "credit",
     "label": "Écart de crédit haut rendement",
-    "raw": -3.47,
-    "score": 1
+    "raw": -3.52,
+    "score": 0
    },
    {
     "key": "safe_haven",
     "label": "Actions vs obligations (20 j)",
-    "raw": -0.05418,
-    "score": 2
+    "raw": -0.08169,
+    "score": 1
    }
   ],
   "source": "Baromètre Patrimoine — calculé par l'éditeur (FRED : S&P 500, VIX, écart de crédit, taux 10 ans)"
@@ -53,7 +53,7 @@
  "crypto_sentiment": {
   "value": 12,
   "label": "Peur extrême",
-  "as_of": "2026-11-20",
+  "as_of": "2026-11-21",
   "source": "alternative.me — Crypto Fear & Greed Index"
  },
  "inflation_be": {
