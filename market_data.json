@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-21T14:25:35+00:00",
+ "generated_at": "2026-11-22T14:19:39+00:00",
  "errors": {},
  "buffett": {
   "ratio": 255.0,
@@ -51,9 +51,9 @@
   "source": "Baromètre Patrimoine — calculé par l'éditeur (FRED : S&P 500, VIX, écart de crédit, taux 10 ans)"
  },
  "crypto_sentiment": {
-  "value": 12,
+  "value": 11,
   "label": "Peur extrême",
-  "as_of": "2026-11-21",
+  "as_of": "2026-11-22",
   "source": "alternative.me — Crypto Fear & Greed Index"
  },
  "inflation_be": {
